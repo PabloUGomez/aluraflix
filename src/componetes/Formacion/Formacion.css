@@ -1,0 +1,43 @@
+.formacion{
+    display: flex;
+    color: white;
+    justify-content: left;
+    align-items: center;
+    padding: 1vw 3vw;
+}
+.formacion h3{
+    font-size: 1.3vw;
+    padding: 0.7vw 1.2vw;
+    margin-right: 0.5vw;
+    border-radius: 4px;
+    font-weight: 200;
+    background-color: #00C86F;
+}
+.formacion h4{
+    font-weight: lighter;
+    font-size: 0.9vw;
+}
+.lista-videos{
+    padding-left: 1vw;
+}
+.lista-videos ::-webkit-scrollbar {
+    height: 0.5vw;
+  }
+  ::-webkit-scrollbar-button{
+    margin-left: 1vw;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
