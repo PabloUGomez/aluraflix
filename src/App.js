@@ -2,8 +2,9 @@ import {useState} from 'react';
 import "./App.css"
 import Header from './componetes/Header/Header.jsx';
 import Home from './pages/Home/Home';
-import Footer from './componetes/Footer/Footer';
 import NuevoVideo from './pages/NuevoVideo/NuevoVideo';
+import NuevaCategoria from './pages/NuevaCategoria/NuevaCategoria';
+import Footer from './componetes/Footer/Footer';
 
 function App() {
 
@@ -128,13 +129,14 @@ function App() {
 
   return (
     <>
-       <Header></Header>  
-       {/*<Home
-          videos={videos}
-          formaciones={formaciones}
-       />*/}
-       <NuevoVideo></NuevoVideo>
-       <Footer></Footer>
+      <Header></Header>  
+      {/*<Home
+        videos={videos}
+        formaciones={formaciones}
+        <NuevoVideo></NuevoVideo>
+      />*/}
+      <NuevaCategoria></NuevaCategoria>
+      <Footer></Footer>
     </>
   )
 }
