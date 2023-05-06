@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import "./App.css"
 import Header from './componetes/Header/Header.jsx';
-import Banner from './componetes/Banner/Banner';
-import Formacion from './componetes/Formacion/Formacion.jsx';
+import Home from './pages/Home/Home';
 import Footer from './componetes/Footer/Footer';
+import NuevoVideo from './pages/NuevoVideo/NuevoVideo';
 
 function App() {
 
@@ -129,16 +129,12 @@ function App() {
   return (
     <>
        <Header></Header>  
-       
-      {/*<Banner></Banner>
-      {
-        formaciones.map((formacion) => <Formacion 
-          datos={formacion} 
-          key={formacion.titulo} 
-          videos={videos.filter(video=>video.categoria === formacion.titulo)}
-        />) 
-      }  
-      <Footer/>*/}
+       {/*<Home
+          videos={videos}
+          formaciones={formaciones}
+       />*/}
+       <NuevoVideo></NuevoVideo>
+       <Footer></Footer>
     </>
   )
 }

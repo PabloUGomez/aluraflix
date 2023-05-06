@@ -1,0 +1,23 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2vw;
+    padding-bottom: 1vw;
+    font-weight: 100;
+    color: white;
+    font-size: 4vw;
+}
+.botones{
+    display: flex;
+    justify-content: space-between;
+    height: 3vw;
+    box-sizing: border-box;
+}
+
+.botones span{
+    display: flex;
+    justify-content: space-between;
+    width: 23vw;
+}
+

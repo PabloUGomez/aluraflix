@@ -42,14 +42,6 @@ const Formacion = (props) => {
                 }
             </Box>
             </div>
-            {/*<div className='videos'>
-                {
-                    videos.map( (video, index) => <Video 
-                        datos={video} 
-                        key={index} 
-                    />)
-                }
-            </div>*/}
         </section>
     )
 }
