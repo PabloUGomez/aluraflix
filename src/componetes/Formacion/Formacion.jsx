@@ -6,7 +6,7 @@ import Video from '../Video/Video';
 const Formacion = (props) => {
 
     const {titulo,subTitulo,color,codigo} = props.datos
-    const {videos} = props
+    const {videos,eliminarVideo} = props
     const fondo = {
         backgroundColor: color
     }
@@ -30,16 +30,17 @@ const Formacion = (props) => {
                         width: "100%",
                         overflow: "auto",
                         maxHeight: "22vw",
-                        scrollSnapType: 'x mandatory',
+                        scrollSnapType: 'x manda    tory',
                         '& > *': {
                         scrollSnapAlign: 'center',
                         },
                         '::-webkit-scrollbar': { display: 'auto' },
                     }}
                     >{
-                    videos.map( (video, index) => <Video 
+                    videos.map( (video) => <Video 
                         datos={video} 
-                        key={index} 
+                        key={video.id}
+                        eliminarVideo={eliminarVideo} 
                     />)
                     }
                 </Box>

@@ -8,6 +8,11 @@
     color: white;
     font-size: 4vw;
 }
+@media  (max-width: 600px) {
+    .box {
+      font-size: 2.2vw;
+    }
+}
 .botones{
     display: flex;
     justify-content: space-between;
@@ -19,5 +24,8 @@
     display: flex;
     justify-content: space-between;
     width: 23vw;
+}
+.helper{
+    height: 1vw;
 }
 

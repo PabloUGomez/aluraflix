@@ -2,3 +2,23 @@ img{
     width: 29vw;
     height: 18vw;
 }
+
+.card{
+    position: relative;
+}
+
+.eliminar{
+    width: 3.2vw;
+    height: 3.2vw;
+    position: absolute;
+    opacity: 0.5;
+    color: red;
+    margin-left: 26vw;
+}
+.eliminar:hover{
+    margin-left: 25vw;
+    width: 4vw;
+    height: 4vw;
+    opacity: 1;
+}
+

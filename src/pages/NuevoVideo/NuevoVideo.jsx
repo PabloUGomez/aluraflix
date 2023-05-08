@@ -42,12 +42,6 @@ const NuevoVideo = (props) => {
       categoria.valid === true &&
       descripcion.valid === true &&
       codigo.valid === true) {
-      console.log(titulo);
-      console.log(urlVideo);
-      console.log(urlImagen);
-      console.log(categoria);
-      console.log(descripcion);
-      console.log(codigo);
       crearVideo({
           titulo: titulo.value,
           urlVideo: urlVideo.value,
@@ -56,6 +50,7 @@ const NuevoVideo = (props) => {
           descripcion: descripcion.value,
           codigo: codigo.value
           })
+      vaciarCampos();
     }}
   const vaciarCampos = () => {
     setTitulo({value: "", valid: true})
@@ -70,10 +65,11 @@ const NuevoVideo = (props) => {
     <>
     <Box
       component="form"
+      className='box'
       sx={{
         py: 3,
         display: 'grid',
-        gap: "3.5vw",
+        gap: "3vw",
         alignItems: 'center',
         flexWrap: 'wrap',
         pl: "5vw",
@@ -86,17 +82,21 @@ const NuevoVideo = (props) => {
       }
     >
       <h1 className='titulo'>Nuevo video</h1>
-      <FormControl>
+      <FormControl >
         <Input 
+          className='input'
           placeholder="Titulo" 
           variant="outlined"
           required
           sx={{
             "--Input-radius": "4px",
+            "--Input-minHeight": "1.5rem",
+            "--Input-paddingInline": "1vw",
             backgroundColor: "#53585D",
             border: "none",
             color: "#E5E5E5",
-            height: "3.2vw",
+            fontSize: "90%",
+            height:"3.2vw"
           }}
           error={titulo.valid === false}
           onBlur={(input) =>{setTitulo({ value: input.target.value,valid: validarTitulo(input.target.value)})}}
@@ -109,7 +109,7 @@ const NuevoVideo = (props) => {
           sx={{
             color:"red",
             fontWeight: "100",
-            fontSize: "1vw",
+            fontSize: "90%",
           }}
         >{titulo.valid === false && "Este campo es obligatorio, debe tener minimo 8 caracteres y maximo 25"}</FormHelperText>
       </FormControl>
@@ -120,10 +120,13 @@ const NuevoVideo = (props) => {
           required
           sx={{
             "--Input-radius": "4px",
+            "--Input-minHeight": "1.5rem",
+            "--Input-paddingInline": "1vw",
             backgroundColor: "#53585D",
             border: "none",
             color: "#E5E5E5",
             height: "3.2vw",
+            fontSize: "90%",
           }}
           error={urlVideo.valid === false}
           onBlur={(input) =>{setUrlVideo({value: input.target.value,valid: validarVacio(input.target.value)})}}
@@ -132,10 +135,11 @@ const NuevoVideo = (props) => {
           }
         />
         <FormHelperText 
+        className="helper"
           sx={{
-            color:"red",
+            color: "red",
             fontWeight: "100",
-            fontSize: "1vw",
+            fontSize: "90%",
           }}
         >{urlVideo.valid === false && "Este campo es obligatorio"}</FormHelperText>
       </FormControl>
@@ -146,10 +150,13 @@ const NuevoVideo = (props) => {
           required
           sx={{
             "--Input-radius": "4px",
+            "--Input-minHeight": "1.5rem",
+            "--Input-paddingInline": "1vw",
             backgroundColor: "#53585D",
             border: "none",
             color: "#E5E5E5",
             height: "3.2vw",
+            fontSize: "90%",
 
           }} 
           error={urlImagen.valid === false}
@@ -164,7 +171,7 @@ const NuevoVideo = (props) => {
           sx={{
             color:"red",
             fontWeight: "100",
-            fontSize: "1vw",
+            fontSize: "90%",
           }}
         >{urlImagen.valid === false && "Este campo es obligatorio"}</FormHelperText>
       </FormControl>
@@ -175,9 +182,12 @@ const NuevoVideo = (props) => {
           variant="outlined"
           sx={{
             "--Select-radius": "4px",
+            "--Select-minHeight": "1.5rem",
+            "--Select-paddingInline": "1vw",
             backgroundColor: "#53585D",
             border: "none",
             color: "#E5E5E5",
+            fontSize: "90%",
             height: "3.2vw",
           }}
           value={categoria.value}
@@ -185,8 +195,12 @@ const NuevoVideo = (props) => {
           error={categoria.valid === false}
         >
           {formaciones.map((formacion) => <Option
+            className='input'
+            sx={{
+            fontSize: "90%",
+            height: "3.2vw",}}
             value={formacion.titulo} 
-            key={formacion.titulo} >
+            key={formacion.id} >
             {formacion.titulo}
           </Option> ) }  
         </Select>
@@ -194,7 +208,7 @@ const NuevoVideo = (props) => {
           sx={{
             color:"red",
             fontWeight: "100",
-            fontSize: "1vw",
+            fontSize: "90%",
           }}
         >{categoria.valid === false && "Este campo es obligatorio"}</FormHelperText>
       </FormControl>
@@ -206,9 +220,12 @@ const NuevoVideo = (props) => {
           required
           sx={{
             "--Textarea-radius": "4px",
+            "--Textarea-minHeight": "2vw",
+            "--Textarea-paddingInline": "1vw",
             backgroundColor: "#53585D",
             border: "none",
             color: "#E5E5E5",
+            fontSize: "90%",
             height: "10vw",
           }} 
           error={descripcion.valid === false}
@@ -222,7 +239,7 @@ const NuevoVideo = (props) => {
           sx={{
             color:"red",
             fontWeight: "100",
-            fontSize: "1vw",
+            fontSize: "90%",
           }}
         >{descripcion.valid === false && "Este campo es obligatorio, debe tener minimo 20 caracteres y maximo 100"}</FormHelperText>
       </FormControl>
@@ -230,9 +247,13 @@ const NuevoVideo = (props) => {
         <Input 
           placeholder="Código de seguridad" 
           variant="outline"
+          type='password'
           sx={{
             "--Input-radius": "4px",
+            "--Input-minHeight": "1.5rem",
+            "--Input-paddingInline": "1vw",
             height: "3.2vw",
+            fontSize: "90%",
             backgroundColor: "#53585D",
             border: "none",
             color: "#E5E5E5",
@@ -248,7 +269,7 @@ const NuevoVideo = (props) => {
           sx={{
             color:"red",
             fontWeight: "100",
-            fontSize: "1vw",
+            fontSize: "90%",
           }}
         >{codigo.valid === false && "Este campo es obligatorio, debe tener minimo 8 caracteres, maximo 20, incluir una mayuscula una miniscula y un numero."}</FormHelperText>
       </FormControl>
@@ -263,7 +284,9 @@ const NuevoVideo = (props) => {
                 width: "9vw",
                 fontSize: "1.3vw",
                 fontWeight: "400",
-                "--Button-radius": "4px",
+                "--Button-radius": "2px",
+                "--Button-minHeight": "2vw",
+                "--Button-paddingInline": "1vw",              
               }}
           >Guardar</Button>
           <Button
@@ -274,7 +297,9 @@ const NuevoVideo = (props) => {
               width: "9vw",
               fontSize: "1.3vw",
               fontWeight: "400",
-              "--Button-radius": "4px",
+              "--Button-radius": "2px",
+              "--Button-minHeight": "2vw",
+              "--Button-paddingInline": "1vw",        
             }}
           >Limpiar</Button>
         </span>
@@ -287,7 +312,9 @@ const NuevoVideo = (props) => {
               width: "15vw",
               fontSize: "1.3vw",
               fontWeight: "400",
-              "--Button-radius": "4px",
+              "--Button-radius": "2px",
+              "--Button-minHeight": "2vw",
+              "--Button-paddingInline": "1vw",                    
             }}
             >Nueva Categoría</Button>
         </Link>

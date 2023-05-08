@@ -11,18 +11,21 @@ import { v4 as uuid } from 'uuid';
 function App() {
 
   const [formaciones,actualizarFormaciones] = useState([{
+    id: uuid(),
     titulo: "Front end",
     descripcion: "Formación Front End de Alura Latam",
     color: "#6BD1FF",
     codigo: "1"
   },
   {
+    id: uuid(),
     titulo: "Back end",
     descripcion: "Formación Back End de Alura Latam",
     color: "#00C86F",
     codigo: "2"
   },
   {
+    id: uuid(),
     titulo: "Innovación y Gestión",
     descripcion: "Formación Innovación y Gestión de Alura Latam",
     color: "#FE8C2A",
@@ -142,10 +145,18 @@ function App() {
   const crearVideo = (nuevoVideo) => {
     actualizarVideos([...videos, {...nuevoVideo,id: uuid()} ])
   }
-  const crearCategoria = (nuevoCategoria) => {
-    actualizarFormaciones([...formaciones, {...nuevoCategoria,id: uuid()} ])
+  const crearCategoria = (nuevaCategoria) => {
+    actualizarFormaciones([...formaciones, {...nuevaCategoria, id: uuid()}])
   }
 
+  const eliminarCategoria = (id) => {
+    const nuevasCategorias = formaciones.filter((formacion) => formacion.id != id)
+    actualizarFormaciones (nuevasCategorias);
+  }
+  const eliminarVideo = (id) => {
+    const nuevosVideos = videos.filter((video) => video.id != id)
+    actualizarVideos (nuevosVideos);
+  }
   return (
     <>
       <Router>
@@ -155,6 +166,7 @@ function App() {
             <Home
               videos={videos}
               formaciones={formaciones}
+              eliminarVideo={eliminarVideo}
             />}
           />
           <Route path='/NuevoVideo' element={
@@ -167,6 +179,7 @@ function App() {
             <NuevaCategoria
               formaciones={formaciones}
               crearCategoria={crearCategoria}
+              eliminarCategoria={eliminarCategoria}
             />}
           />  
         </Routes>
