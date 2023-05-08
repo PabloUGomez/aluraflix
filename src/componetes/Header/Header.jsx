@@ -1,11 +1,12 @@
 import React from 'react';
 import "./Header.css"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <header>
-            <img src="img/logo.png" alt="lolo aluraflix" className='logo' />
-            <button className='nuevo-video'>Nuevo video</button>
+            <Link to="/"><img src="img/logo.png" alt="logo aluraflix" className='logo' /></Link>
+            <Link className="nuevo-video" to="/NuevoVideo">Nuevo Video</Link>
         </header>
     );
 }

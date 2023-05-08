@@ -11,7 +11,7 @@ const Home = (props) => {
                 datos={formacion} 
                 key={formacion.titulo} 
                 videos={videos.filter(video=>video.categoria === formacion.titulo)}
-            />) }  
+            />)}  
         </>
     )
 }
